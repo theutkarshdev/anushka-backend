@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoute from "./routes/authRoutes.js";
 import blogRoute from "./routes/blogRoutes.js";
+import bookingRoute from "./routes/bookingRoutes.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -31,6 +32,7 @@ db.once("open", () => {
 
   app.use("/api/auth", authRoute);
   app.use("/api/blog", blogRoute);
+  app.use("/api/booking", bookingRoute);
 
   // Start the server
   app.listen(port, () => {
